@@ -3,18 +3,18 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom';
 
 // Component Imports
-import Navigation from './components/sub-components/Navigation';
 import Home from './components/main-components/Home';
+import About from './components/main-components/About';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Navigation />
+      <React.Fragment>
         <Switch>
             <Route exact path={'/'} component={Home} />
+            <Route exact path={'/about'} component={About} />
         </Switch>
-      </div>
+      </React.Fragment>
     );
   }
 }

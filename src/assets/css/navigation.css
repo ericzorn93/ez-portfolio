@@ -1,4 +1,5 @@
 .sidebar {
+    /* margin-top: -380px; */
     position: fixed;
     width: 200px;
     height: 100%;
@@ -33,8 +34,13 @@
     color: var(--secondary-color);
     background: none;
     font-size: 30px;
-    border: none;
+    /* border: none; */
+    border: 1px solid var(--secondary-color);
     display: block
+}
+
+.sidebar .toggle-menu-btn:active {
+    border: 1px solid var(--secondary-color);
 }
 
 .nav-title {
@@ -46,6 +52,6 @@
 
 .profile-pic {
     width: 120px;
-    margin-top: 60px;
+    margin-top: 40px;
     border-radius: 15px;
 }
