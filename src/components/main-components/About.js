@@ -4,7 +4,51 @@ import '../../assets/css/about.css';
 import { ProgressBar } from 'react-bootstrap';
 
 class About extends Component {
+
+
+  state = {
+    workExperiences: [
+        {
+          id: 0,
+            title: 'Technical Specialist',
+            company: 'Apple Inc.',
+            location: 'Nanuet, NY',
+            time: '2017-2018',
+            description: 'As a Technical Specialist, we address the customer’s need of' +
+            'assistance and assess their situation. Sometimes I take care of' +
+            'customers with advice or a solution on the spot, using your' +
+            'knowledge of current Apple technology to help with iPod, iPhone,' +
+            'and iPad devices. At other times, you refer customers to support' +
+            'team members who get them up and running again. We provide' +
+            'personal training for new customers, helping them acquire the' +
+            'basic skills they need to get started on photo, video, and music' +
+            'projects.'
+        },
+        {
+          id: 1,
+            title: 'Group Leader - Counselor',
+            company: 'Camp Ramaquois',
+            location: 'Pomona, NY',
+            time: '2010-2016',
+            description: 'Promoted to Group Leader from Counselor and Counselor' +
+            'in Training Responsible for overseeing group of 20+ campers' +
+            'everyday.'
+        },
+        {
+          id: 2,
+            title: 'Summer Digital Intern',
+            company: 'Green Lion Digital',
+            location: 'Wyckoff, NJ',
+            time: 'June 2016, July 2016',
+            description: 'Assist with Website and Email Campaign creation and' +
+            'maintenance. I also created and designed info graphics and' +
+            'imagery for company and clients'
+        }
+    ]
+  };
+
   render() {
+    const { workExperiences } = this.state;
     return (
       <React.Fragment>
         <Navigation sidebarMarginTop={-10} profileImgMarginLeft={2}/>
@@ -12,7 +56,7 @@ class About extends Component {
           <div className="container">
             <h1 className="about-header text-center">About Me / Skills</h1>
             <section className="education-section">
-              <h3 className="section-header-text">Education</h3>
+              <h3 className="section-header-text">Education <i className="fas fa-graduation-cap" style={{color: "white", fontSize: 40}}></i></h3>
               <div className="schools container">
                 {/* University of Denver */}
                 <div className="info-card">
@@ -36,7 +80,7 @@ class About extends Component {
             </section>
               <br/>
             <section className="skills">
-              <h3 className="section-header-text">Skills</h3>
+              <h3 className="section-header-text">Skills <i className="fas fa-check-double" style={{color: "white", fontSize: 40}}></i></h3>
               <div className="progress-bars container">
                   <label className={"progressbar-label"}>HTML5:</label>
                   <ProgressBar now={95} label={"HTML 5"} bsStyle={"warning"} />
@@ -74,8 +118,24 @@ class About extends Component {
                   <ProgressBar now={60} label={"MongoDB"} bsStyle={"warning"}/>
               </div>
             </section>
+
+            <section className="experience-section">
+                <div className="experiences container">
+                    <h3 className="section-header-text">Experience <i className="fas fa-briefcase" style={{color: "white", fontSize: 40}}></i></h3>
+                    {workExperiences.map(experience => (
+                        <div className="info-card" key={experience.id}>
+                            <h4 className="about-label experience-title">{experience.title}</h4>
+                            <p className="about-info"><strong>Company: </strong>{experience.company}</p>
+                            <p className="about-info"><strong>Location: </strong>{experience.location}</p>
+                            <p className="about-info"><strong>Time: </strong>{experience.time}</p>
+                            <p className="about-info"><strong>Job Description: </strong>{experience.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
           </div>
         </div>
+          <br/><br/><br/>
       </React.Fragment>
     )
   }
