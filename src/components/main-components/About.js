@@ -6,8 +6,12 @@ class About extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navigation sidebarMarginTop={-20} profileImgMarginLeft={2}/>
-        <h1>About Page</h1>
+        <Navigation sidebarMarginTop={-10} profileImgMarginLeft={2}/>
+        <div className="row">
+          <div className="container">
+            <h1 className="about-header text-center">About Me / Skills</h1>
+          </div>
+        </div>
       </React.Fragment>
     )
   }

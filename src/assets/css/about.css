@@ -1,0 +1,22 @@
+body {
+    background: var(--primary-color);
+}
+
+.about-header {
+    color: var(--secondary-color);
+    font-family: var(--primary-font-family);
+    margin-top: 80px;
+    font-size: 40px;
+    animation: headerAnimation 1s forwards 0s linear;
+}
+
+@keyframes headerAnimation{
+    0%{
+        transform: rotate(0) scale(1) translateX(-760px);
+        opacity: 0;
+        }
+    100%{
+        transform: rotate(0) scale(1) translateX(0px);
+        opacity: 1;
+        }
+}

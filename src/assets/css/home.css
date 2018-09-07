@@ -30,6 +30,21 @@
     font-family: var(--primary-font-family);
 }
 
+.hero-text {
+    animation: heroTextAnimation 2s forwards 0s linear;
+}
+
+@keyframes heroTextAnimation {
+    0%{
+        transform: rotate(0) scale(1);
+        opacity: 0;
+        }
+    100%{
+        transform: rotate(0) scale(1);
+        opacity: 1;
+        }
+}
+
 .intro-btn {
     border: 2px solid var(--secondary-color);
     background: none;
