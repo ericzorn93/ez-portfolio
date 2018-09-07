@@ -20,3 +20,29 @@ body {
         opacity: 1;
         }
 }
+
+.education-header {
+    color: white;
+    font-family: var(--primary-font-family);
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.info-card {
+    margin-top: 30px;
+    border: 1px solid var(--secondary-color);
+    width: 70%;
+    padding: 15px;
+}
+
+.education-section .schools .about-label {
+    color: white;
+    font-weight: 800;
+    line-height: 20px;
+    width: 80%;
+}
+
+.education-section .schools .about-info {
+    color: white;
+    font-size: 12px;
+}
