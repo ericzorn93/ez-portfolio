@@ -21,7 +21,7 @@ body {
         }
 }
 
-.education-header {
+.section-header-text {
     color: white;
     font-family: var(--primary-font-family);
     margin-top: 40px;
@@ -45,4 +45,13 @@ body {
 .education-section .schools .about-info {
     color: white;
     font-size: 12px;
+}
+
+.progress-bars {
+    margin-top: 40px;
+}
+
+.progressbar-label {
+    color: white;
+    font-weight: 800;
 }

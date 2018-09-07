@@ -16,7 +16,7 @@ class Navigation extends Component {
 
   handleLinkToggle = () => {
     this.setState({ sidebarOpen: !this.state.sidebarOpen });
-  }
+  };
 
   render() {
     const { sidebarOpen } = this.state;  
