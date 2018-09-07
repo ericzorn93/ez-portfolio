@@ -1,43 +1,37 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import ProfilePicture from '../../assets/img/profile-picture.jpg';
+import '../../assets/css/navigation.css';
+import { Link } from 'react-router-dom';
+
 
 class Navigation extends Component {
+
+  state = {
+      sidebarOpen: false
+  }; 
+
+  toggleSidebar = () => {
+    this.setState({ sidebarOpen: !this.state.sidebarOpen });
+  }; 
+
+  handleLinkToggle = () => {
+    this.setState({ sidebarOpen: !this.state.sidebarOpen });
+  }
+
   render() {
+    const { sidebarOpen } = this.state;  
     return (
-    <Navbar inverse collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <Link to="/about">React-Bootstrap</Link>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <NavItem eventKey={1} href="#">
-              Link
-            </NavItem>
-            <NavItem eventKey={2} href="#">
-              Link
-            </NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.3}>Separated link</MenuItem>
-            </NavDropdown>
-          </Nav>
-          <Nav pullRight>
-            <NavItem eventKey={1} href="#">
-              Link Right
-            </NavItem>
-            <NavItem eventKey={2} href="#">
-              Link Right
-            </NavItem>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+        <nav className={sidebarOpen ? "sidebar active" : "sidebar"}>
+            <button className="toggle-menu-btn" onClick={this.toggleSidebar}>
+                &#9776;
+            </button>
+            <ul>
+                <img src={ProfilePicture} alt="profile-pic" className="profile-pic"/>
+                <li><Link to={'/'} onClick={this.handleLinkToggle}>Home</Link></li>
+                <li><Link to={'/about'} onClick={this.handleLinkToggle}>About</Link></li>
+                <li><Link to={'/contact'} onClick={this.handleLinkToggle}>Contact</Link></li>
+            </ul>
+        </nav>
     )
   }
 }

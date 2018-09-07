@@ -1,0 +1,43 @@
+.sidebar {
+    /* margin-top: -20px; */
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: var(--primary-color);
+    left: -200px;
+    transition: all 200ms linear;
+}
+
+.sidebar.active {
+    left: 0px;
+}
+
+.sidebar ul li {
+    font-size: 25px;
+    list-style-type: none; 
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+.sidebar ul li a {
+    color: var(--secondary-color);
+}
+
+.sidebar .toggle-menu-btn {
+    position: absolute;
+    left: 230px;
+    top: 20px;
+    color: var(--secondary-color);
+    background: none;
+    font-size: 30px;
+    border: none;
+    display: block
+}
+
+.profile-pic {
+    width: 120px;
+    margin-top: 60px;
+    border-radius: 15px;
+}
