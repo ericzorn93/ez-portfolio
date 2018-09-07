@@ -2,8 +2,17 @@ import React, { Component } from 'react'
 import Navigation from "../sub-components/Navigation";
 import '../../assets/css/contact.css';
 import { Col, Row, FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap';
+import GoogleMapReact from 'google-map-react';
+
+
+const AnyReactComponent = ({ text }) => <div>{ text }</div>;
 
 class Contact extends Component {
+
+   static defaultProps = {
+        center: { lat: 40.7446790, lng: -73.9485420 },
+        zoom: 11
+   };
 
   state = {
     name: "",
@@ -74,6 +83,13 @@ class Contact extends Component {
                               <Button bsSize={"large"} bsStyle={"warning"} block type={"submit"}>Submit</Button>
                           </FormGroup>
                       </form>
+                      <GoogleMapReact defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
+                          <AnyReactComponent
+                              lat={ 40.7473310 }
+                              lng={ -73.8517440 }
+                              text={ 'Where\'s Waldo?' }
+                          />
+                      </GoogleMapReact>
                   </Col>
               </Row>
           </div>
