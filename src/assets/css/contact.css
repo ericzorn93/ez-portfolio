@@ -24,4 +24,10 @@
 .form-wrap {
     border: 1px solid var(--secondary-color);
     padding: 25px;
+    width: 100%;
+}
+
+.form-submitted {
+    color: var(--secondary-color);
+    text-decoration: none;
 }

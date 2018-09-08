@@ -8,10 +8,10 @@ import {
 } from 'react-router-dom';
 
 const Home = (props) => {
-    return ( 
+    return (
     <React.Fragment >
         <LazyHero imageSrc={MainImg} color = { "#1f1f1f"} opacity = {0.7} minHeight = {"100vh"}>
-            <Navigation sidebarMarginTop={-540} />
+            <Navigation sidebarMarginTop={-340} />
             <div className="hero-text" >
                 <h1 className={"home-intro"} > I 'm Eric Zorn</h1>
                 <h3 className={"home-about"}> Full - Stack Web Developer &amp; UX / UI Designer </h3>

@@ -2,24 +2,21 @@ import React, { Component } from 'react'
 import Navigation from "../sub-components/Navigation";
 import '../../assets/css/contact.css';
 import { Col, Row, FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap';
-import GoogleMapReact from 'google-map-react';
-
-
-const AnyReactComponent = ({ text }) => <div>{ text }</div>;
+import MyMapComponent from '../sub-components/Map';
 
 class Contact extends Component {
-
-   static defaultProps = {
-        center: { lat: 40.7446790, lng: -73.9485420 },
-        zoom: 11
-   };
 
   state = {
     name: "",
     email: "",
     phone: "",
     message: "",
-    length: ""
+    length: "",
+    API_KEY: "AIzaSyBcFWYlKe66cpgbBaJ46G_IVTVf8NJk5TI",
+    mapsURL: `https://maps.googleapis.com/maps/api/js?key=AIzaSyBcFWYlKe66cpgbBaJ46G_IVTVf8NJk5TI&callback=initMap`,
+    secondMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
+    formView: "block",
+    formConfirm: "none"
   };
 
   getValidationState = () => {
@@ -50,19 +47,26 @@ class Contact extends Component {
         e.preventDefault();
         alert("You Need to Enter Your Message Below");
     }
+
+    e.preventDefault();
+
+    this.setState({
+        formView: "none",
+        formConfirm: "block"
+    })
   };
 
   render() {
     return (
       <React.Fragment>
           <Navigation sidebarMarginTop={-80} profileImgMarginLeft={5}/>
-
-          <h1 className="contact-header text-center">Contact</h1>
+          <h1 className="contact-header text-center">Feel Free To Reach Out</h1>
           <br/>
           <div className="container">
               <Row>
                   <Col xs={12} md={12}>
-                      <form className={"form-wrap"} onSubmit={this.handleFormSubmit}>
+                      <h1 style={{display: this.state.formConfirm}} className={"text-center form-submitted"}>Form Submitted!</h1>
+                      <form className={"form-wrap"} onSubmit={this.handleFormSubmit} style={{display: this.state.formView}}>
                           <FormGroup controlId="formBasicText">
                               <ControlLabel className={"form-label"}>Please Enter Your Name:</ControlLabel>
                               <FormControl type={"text"} value={this.state.name} placeholder={"Enter Name"} onChange={this.handleFormChange} name={"name"}/>
@@ -83,16 +87,12 @@ class Contact extends Component {
                               <Button bsSize={"large"} bsStyle={"warning"} block type={"submit"}>Submit</Button>
                           </FormGroup>
                       </form>
-                      <GoogleMapReact defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
-                          <AnyReactComponent
-                              lat={ 40.7473310 }
-                              lng={ -73.8517440 }
-                              text={ 'Where\'s Waldo?' }
-                          />
-                      </GoogleMapReact>
                   </Col>
               </Row>
           </div>
+          <br/><br/>
+
+          <MyMapComponent/>
       </React.Fragment>
     )
   }
