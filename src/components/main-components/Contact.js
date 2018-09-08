@@ -60,7 +60,7 @@ class Contact extends Component {
     return (
       <React.Fragment>
           <Navigation sidebarMarginTop={-80} profileImgMarginLeft={5}/>
-          <h1 className="contact-header text-center">Feel Free To Reach Out</h1>
+          <h1 className="contact-header text-center" style={{fontSize: 30}}>Look Forward To Hearing From You</h1>
           <br/>
           <div className="container">
               <Row>
