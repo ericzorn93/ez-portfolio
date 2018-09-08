@@ -14,7 +14,7 @@
 
 .sidebar ul li {
     font-size: 15px;
-    list-style-type: none; 
+    list-style-type: none;
     padding-top: 15px;
     padding-bottom: 15px;
     margin-left: -40px;
@@ -54,4 +54,12 @@
     width: 120px;
     margin-top: 40px;
     border-radius: 15px;
+}
+
+.social-icons {
+    margin-left: 10px;
+}
+
+.nav-footer {
+    /* Nothing Yet */
 }
