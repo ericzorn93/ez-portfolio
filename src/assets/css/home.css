@@ -11,7 +11,7 @@
 
 .sidebar ul li {
     font-size: 15px;
-    list-style-type: none; 
+    list-style-type: none;
     padding-top: 15px;
     padding-bottom: 15px;
     margin-left: -50px;
@@ -75,6 +75,7 @@
 
 
 /* Media Queries */
+
 @media (max-width: 983px) {
     .sidebar {
         margin-top: -330px;

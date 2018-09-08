@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProfilePicture from '../../assets/img/profile-picture.jpg';
+import ProfilePicture from '../../assets/img/profile-picture-second.jpg';
 import { Link } from 'react-router-dom';
 import '../../assets/css/navigation.css';
 import { SocialIcon } from 'react-social-icons';
